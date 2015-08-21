@@ -1,6 +1,6 @@
 # Shake Animation
 
-Here's a shake animation I made in Android that also animates color.
+This is a shake animation, specifically for text fields when input is incorrect, that also performs a pulse animation with the color of your choice.
 
 ## Demo:
 
@@ -14,6 +14,6 @@ Shaker shake = new Shaker(textInput, -15, 15, GREY, Color.RED);
 shake.shake();
 ```
 
-## Future plans
+## Future plans:
 
-I will soon make it easier to incorporate and use with any project.
+I will soon make it easier to incorporate and use this animation with any project.
