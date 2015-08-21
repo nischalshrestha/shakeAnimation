@@ -10,10 +10,30 @@ alt="Shake Animation demo" border="10" /></a>
 ## Code:
 
 ```java
-Shaker shake = new Shaker(textInput, -15, 15, GREY, Color.RED);
-shake.shake();
+EditText textField = (EditText) findViewById(R.id.editText);
+Shaker shaker = new Shaker(textField, -15, 15, GREY, Color.RED);
+//Wrap this with the appropriate condition
+shaker.shake();
 ```
 
 ## Future plans:
 
-I will soon make it easier to incorporate and use this animation with any project.
+Currently, this performs shake animation based on set properties for the 3 animators, encapsulated in Shaker. I arrived at the default values simply by tweaking and observing what felt right. Another property that I plan to add is rotation to give it a jiggling effect.
+
+For increased customizability, I'm considering making it possible to either pass in the shake and color animators in a separate constructor, and/or allow tweaking via methods:
+
+```java
+//Constructor
+Shaker shaker = new Shaker(textField, shakeAnimator, colorAnimator);
+
+//number of 'shakes'
+shaker.setShakeCount(5);     
+//displacement for the shake
+shaker.setShakeDistance(20); 
+//duration of the color animation
+shaker.setColorAnimationDuration(150); 
+//angle for rotation effect, if set
+shaker.setRotationAngle(10);
+
+//etc...
+```
